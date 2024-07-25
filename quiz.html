@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    body{
+        background-color: purple;
+        height: 100%;
+        width: 100%;
+    }
+    #var{
+      height: 100px;
+      background-color: #fff;
+width: 200px; 
+display: none;
+   }
+    .box{
+        background: #fff;
+        width: 90%;
+        max-width: 600px;
+      
+        padding: 30px;
+        margin: 100px auto 0;
+        border-radius: 10px;
+   
+    }
+    
+    .quiz{
+        border-bottom: 1px #333 solid;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+    .btn{
+        background: #fff;
+        color: #222;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #222;
+        padding: 15px;
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    
+    .btn:hover{
+       background: #222;
+       color: #fff;
+    }
+    #next-btn{
+        background: #222;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+    
+        cursor: pointer;
+        }
+        #view{
+        background: #222;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+    
+        cursor: pointer;
+        }
+        .next-btn{
+        background: #222;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+    
+        cursor: pointer;
+        }
+        .net-btn{
+        background: #222;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+    
+        cursor: pointer;
+        }
+        .hidden{
+          display: none;
+        }
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #3c5077;
+  align-items: center;
+  justify-content: center;
+}
+.vishnu{
+  display: none;
+
+}
+</style>
+<body>
+
+
+    <div class="box">
+  
+        <div class="quiz">
+        <h1>Javascript Quiz</h1>
+      </div>
+      <div class="q1">
+      <div id="question">
+        <p>1. What is older name of javascript ?</p>
+        <div id="answer-buttons">
+
+ <form class="mt-5">
+  <input type="radio" id="correct"  name="check"><label for="radio" class="ml-2">ES6</label> <br>
+  <input type="radio"  id="fale" name="check"><label for="radio" class="ml-2">ES7</label> <br>
+  <input type="radio"  id="false"  name="check"><label for="radio" class="ml-2">ES8</label> <br>
+  <input type="radio" id="fals"   name="check"><label for="radio" class="ml-2">ES9</label> <br>
+ </form>
+
+ 
+ <button class="next-btn">Next</button>
+ <button class="net-btn" onclick="uncheck()">Clear</button>
+ <!-- <input type="submit" id="next-btn" onclick="result()"> -->
+ </div>
+</div>
+</div>
+
+ <!-- question2 -->
+ <div class="hidden">
+  <div id="question">
+    <p>2. Inside which HTML elemnt we use javascript ?</p>
+    <div id="answer-buttons">
+
+<form class="mt-5">
+<input type="radio" name="check" class=""><label for="radio" class="ml-2">Body</label> <br>
+<input type="radio"  name="check"><label for="radio" class="ml-2">head</label> <br>
+<input type="radio" id="correct1" name="check"><label for="radio" class="ml-2">Both head and Body</label> <br>
+<input type="radio" name="check"><label for="radio" class="ml-2">p</label> <br>
+</form>
+
+
+<button id="next-btn">Next</button>
+<input type="submit" id="next-btn" onclick="result()">
+
+    </div>
+</div>
+  </div>
+
+  <!-- question3 -->
+  <div class="vishnu" id="c">
+    <div id="question">
+      <p>3.The external JavaScript file must contain the script tag ?
+</p>
+      <div id="answer-buttons">
+  
+  <form class="mt-5">
+  <input type="radio" name="check"><label for="radio" class="ml-2">True </label> <br>
+  <input type="radio" id="correct2" name="check"><label for="radio" class="ml-2">False</label><br>
+ 
+  </form>
+  
+  
+  
+  <input type="submit" id="next-btn" onclick="result()">
+  <button id="view" onclick="view()">View your Result</button>
+      </div>
+  </div>
+    </div>
+      
+  
+</div>
+
+<div id="var">
+
+</div>
+
+
+
+ 
+    
+    <script>
+
+var bt = document.getElementById("next-btn")
+var c = document.getElementById("c")
+var hid = document.querySelector(".hidden")
+
+bt.addEventListener("click",function(){
+  c.style.display  ="block"
+  hid.style.display = "none"
+})
+
+     
+var netbtn = document.getElementById("net-btn")
+var check = document.getElementsByName("check")
+
+function uncheck(){
+  var radio = document.getElementById("correct")
+  radio.checked = false;
+}
+
+
+    function result(){
+      var score = 0;
+      if( document.getElementById("correct").checked)
+      {
+             score++;
+            
+      }
+      if( document.getElementById("correct1").checked)
+      {
+             score++;
+      }
+      if( document.getElementById("correct2").checked)
+      {
+             score++;
+      }
+      alert("Your Score is :"+score)
+
+      if(score < 2)
+      {
+        alert("You have to improve")
+      }
+       else{
+        alert("You are strong with your concepts")
+       }
+     
+
+     
+    }
+
+
+    
+
+   var nextbtn = document.querySelector(".next-btn")
+   var hidden = document.querySelector(".hidden")
+   var box = document.querySelector(".box")
+   var q1 = document.querySelector(".q1")
+
+   nextbtn.addEventListener("click",function(){
+    
+q1.style.display = "none"
+hidden.style.display = "block"
+
+   })
+
+
+
+  
+    </script>
+</body>
+</html>
